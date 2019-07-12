@@ -1,7 +1,7 @@
-let money = prompt("Ваш бюджет на месяц?",""),
-    time = prompt("Введите дату в формате YYYY-MM-DD","");
+let money = +prompt("Ваш бюджет на месяц?", ""),
+    time = prompt("Введите дату в формате YYYY-MM-DD", "");
 
-let addData = {
+let appData = {
     budget: money,
     expenses: {},
     optionalExpenses: {},
@@ -10,12 +10,26 @@ let addData = {
     savings: false
 };
 
-let q1 = prompt("Введите ообязательную статью расходов в этом месяце",""),
-    q2 = prompt("Во сколько обойдется?",""),
-    q3 = prompt("Введите ообязательную статью расходов в этом месяце",""),
-    q4 = prompt("Во сколько обойдется?","");
+for (let i = 0; i < 2; i++) {
+    let a = prompt("Введите ообязательную статью расходов в этом месяце", ""),
+        b = prompt("Во сколько обойдется?", "");
 
-console.log(addData.expenses.q1 = q2);
-console.log(addData.expenses.q3 = q4);
+    if ((typeof (a)) === 'string' && (typeof (a)) != null && (typeof (b)) != null &&
+        a != '' && b != '' && a.length < 50) {
+        appData.expenses[a] = b;
+    }
+};
 
-alert(addData.budget / 30);
+appData.moneyPerDay = appData.budget / 30;
+
+alert("Ежедневный бюджет:" + appData.moneyPerDay);
+
+if (appData.moneyPerDay < 100) {
+    console.log("Минимальный уровень достатка");
+} else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+    console.log("Среднйи уровень достатка");
+} else if (appData.moneyPerDay > 2000) {
+    console.log("Высокий уровень достатка");
+} else {
+    console.log("Ошибка!");
+}
