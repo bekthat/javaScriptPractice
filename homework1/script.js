@@ -78,3 +78,21 @@ function chooseOptExpenses() {
     }
 }
 chooseOptExpenses();
+
+
+// let arr = [1,23,43,545,54];
+
+// // arr.forEach(function(item, i, mass) {
+// //     console.log(i + ":" + item +"(массив: " + mass + ")");
+// // });
+
+// for(let key of arr) {
+//     console.log(key);
+// }
+
+// let ans = prompt("", ""),
+//     arr = [];
+
+// arr = ans.split(',');
+
+// console.log(arr);
